@@ -25,6 +25,73 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Internal css -->
+  <style>
+    .slide_photo {
+  position: relative;
+  top: 30px;
+  width: 100%;
+  height: 200px;
+  background-image: url('assets/img/me.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  transition: all 2s ease;
+  -webkit-animation: fade 4s infinite;
+  -moz-animation: fade 4s infinite;
+  -o-animation: fade 4s infinite;
+  animation: fade 4s infinite;
+}
+.slide_photo:hover {
+  background-size: 110% auto;
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+  </style>
+
 
 </head>
 
@@ -48,7 +115,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
+  <section class="slide_photo" id="hero">
     <div class="hero-container">
       <h1>Preetom Chandra Dey</h1>
       <h2>I'm going to be a Professional Civil Engineer and Enthusiast Web Developer In Chittagong City</h2>
@@ -691,6 +758,24 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script type="text/javascript">
+
+  var slide_images = ["assets/img/hero-bg.jpg","assets/img/1.jpg","assets/img/2.jpg","assets/img/3.jpg","assets/img/4.jpg",];
+var slide_count = 0;
+
+
+$(document).ready(function() {
+
+  setInterval(function() {
+    slide_count = ++slide_count % slide_images.length;
+
+    $('.slide_photo').css('background-image', 'url(\'' + slide_images[slide_count] + '\')');
+  }, 3000);
+
+});
+</script>
+
 
 </body>
 
